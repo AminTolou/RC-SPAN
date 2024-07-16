@@ -42,17 +42,7 @@ The model architecture comprised 10 residual groups, each containing 20 residual
 
 ![image](https://github.com/user-attachments/assets/1de63cf1-c676-4492-96f4-0d9cbe646f08)
 
-4.	Experimental Results
-4.1 Datasets and Evaluation Metrics
-In the field of Single Image Super-Resolution, there are six benchmark datasets: DIV2K[22], Set5 [23], Set14[24], BSD100 [25], Urban100 [26] and Manga109 [27]. Recent researchers mostly used the DIV2K
- dataset to train their models due to its extensive scale and image variety, and evaluated their models using SET5, SET14, BSD100, Urban100, and Manga109 datasets. For a fair comparison, we also adopt
-the same. Specifically, we utilized DIV2K to train our model for image super-resolution. The Other benchmarking datasets has been exclusively employed for performance analysis.
-4.2 Implementation Details
-To implement the proposed method, a computer with 24 GB RAM, Core (TM) i7 CPU, 64-bit Win10 operating system, Nvidia GeForce 1050 4GB GPU, and the Pytorch library were utilized. Specifying the model
-hyperparameters, there are 10 residual groups, 20 residual blocks per group, 64 channels per convolutional layer, and a reduction ratio equal to 16. The optimization uses Adam with an initial learning
-rate set to 10-4. The learning rate is halved  after every 200 update steps across 1000 total training epochs. 
-        It should be noted that due to the unavailability of a powerful processing system, the results are reported using a batch size of 1 (instead of 16). For a fair comparison, the RCAN method was
-  	also implemented with a batch size of 1, and the results of the two methods with the same batch size are compared.
+
 
 
 ########################################################
