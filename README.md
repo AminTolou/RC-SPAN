@@ -6,6 +6,9 @@ Deep learning has made significant strides in improving Single Image Super-Resol
 The proposed method was evaluated on five benchmark datasets across three different scaling factors. The results were assessed using performance metrics and visual evaluations. The proposed method reduces the number of parameters and number of FLOPs by 47.5% without significantly reducing the visual and qualitative results. In fact, it creates an acceptable trade-off between the number of parameters and the accuracy of the results.
 We select the Residual Channel Attention Network (RCAN) as the baseline model for the single image super-resolution task [7]. The architecture of this model, depicted in (Fig.1), comprises six key components: a shallow feature extraction module, multiple residual groups, residual blocks, a channel attention mechanism, an up-scaling module, and a reconstruction part.
  The shallow feature extractor acts as the first layer, extracting basic features from the input image. These features are then passed through a series of residual groups, each containing multiple residual blocks. The residual blocks use skip connections to improve gradient flow during the training process. 
+
+
+
 ![image](https://github.com/user-attachments/assets/ccfead5f-cb6d-48a6-9090-2c8d5fd9fa51)
 
 
