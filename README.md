@@ -22,6 +22,7 @@ In the channel attention layer of the RCAB, there is a channel downscaling convo
 In the RCAN, there are 200 Residual Channel Attention Blocks (RCAB)  sequentially ((G=10)*(b=20)), so the total number of parameters in this module is 14,848,000, (200×(73728+512). In Fig.1, after the 20 Residual Channel Attention Blocks (RCABs), there is a convolution layer with dimensions 64*64*9, resulting in a total of 36,864 parameters. This layer is repeated 10 times, so the number of parameters in this layer  is 368,640. Furthermore, there is a convolution layer following the 10 residual groups with dimensions 64*64*9 which has 36,864 parameters. 
 Subsequently, there is an upscale module where setting the scaling size to 4 results in 64*256*9 = 147,456 parameters. Lastly, there is one convolution layer with 64*3*9 = 1,728 parameters. Summing up the number of parameters for each layer without considering the bias, the total number of network parameters in the RCAN  is 15,303,040. 
 For comparison the Number of parameter between the proposed method and the original RCAN model, Table 1 is provided, The number of parameters of each layer is given separately in this table. Careful examination of Table 1 reveals that by reducing the parameter count of the convolutional layers a and b through the proposed technique, the overall number of trainable parameters in the network has decreased by approximately 47.5%, going from around 15.3m parameters down to about 8m parameters. Fig 5 illustrates the components of the Channel Splitting Attention Module. We've incorporated this module into the RCAN architecture to develop a novel approach called the Residual Channel-Splitting Attention Network (RC-SPAN).
+
  
 Figure 5: Channel Splitting Attention Madule (Proposed method)
 
@@ -40,7 +41,6 @@ The proposed methodology was executed on a high-capacity computing system. This 
 The model architecture comprised 10 residual groups, each containing 20 residual blocks. Every convolutional layer utilized 64 channels, with a batch normalization size of 16 and a reduction ratio of 16. For optimization, the Adam algorithm was employed with an initial learning rate of 10-4. This rate was decreased by half every 200 update steps over a total of 1000 training epochs.
 
 
-![image](https://github.com/user-attachments/assets/b0c2dd56-7c55-4e1f-802a-a93bf71f9846)
 
 
  
