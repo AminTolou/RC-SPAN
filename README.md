@@ -42,7 +42,54 @@ The model architecture comprised 10 residual groups, each containing 20 residual
 
 ![image](https://github.com/user-attachments/assets/1de63cf1-c676-4492-96f4-0d9cbe646f08)
 
+4.	Experimental Results
+4.1 Datasets and Evaluation Metrics
+In the field of Single Image Super-Resolution, there are six benchmark datasets: DIV2K[22], Set5 [23], Set14[24], BSD100 [25], Urban100 [26] and Manga109 [27]. Recent researchers mostly used the DIV2K
+ dataset to train their models due to its extensive scale and image variety, and evaluated their models using SET5, SET14, BSD100, Urban100, and Manga109 datasets. For a fair comparison, we also adopt
+the same. Specifically, we utilized DIV2K to train our model for image super-resolution. The Other benchmarking datasets has been exclusively employed for performance analysis.
+4.2 Implementation Details
+To implement the proposed method, a computer with 24 GB RAM, Core (TM) i7 CPU, 64-bit Win10 operating system, Nvidia GeForce 1050 4GB GPU, and the Pytorch library were utilized. Specifying the model
+hyperparameters, there are 10 residual groups, 20 residual blocks per group, 64 channels per convolutional layer, and a reduction ratio equal to 16. The optimization uses Adam with an initial learning
+rate set to 10-4. The learning rate is halved  after every 200 update steps across 1000 total training epochs. 
+        It should be noted that due to the unavailability of a powerful processing system, the results are reported using a batch size of 1 (instead of 16). For a fair comparison, the RCAN method was
+  	also implemented with a batch size of 1, and the results of the two methods with the same batch size are compared.
 
+   ![image](https://github.com/AminTolou/RPCAN/assets/44254357/4c64b44f-77ae-41ae-8a03-098f0747b4d3)
+
+########################################################
+How to train the model
+########################################################
+
+1- Prepare training data
+Download DIV2K training data
+
+2- Specify '--dir_data' based on the HR and LR images path. In option.py, '--ext' is set as 'sep_reset', which first convert .png to .npy. If all the training images (.png) are converted to .npy files, then set '--ext sep' to skip converting files.
+
+3-  download bench mark data base that were used for Test 
+
+4- Unpack the tar file to any place you want. Then, change the dir_data argument in src/option.py to the place where DIV2K images are located.
+
+5-We recommend you to pre-process the images before training. This step will decode all png files and save them as binaries. Use --ext sep_reset argument on your first run. You can skip the decoding part and use saved binaries with --ext sep argument.
+
+You can train code by yourself. All scripts are provided in the src/demo.sh. 
+
+cd src       
+sh demo.sh
+
+############################################
+
+Pakage must be download via pip install
+
+############################################
+
+cffi -  cmake -cycler -decorator future
+imageio -intel-openmp -- kiwisolver
+matplotlib-- mkl  --mkl-include
+networkx --numpy--Pillow
+pycparser--pyparsing python-dateutil
+PyWavelets PyYAML scikit-image scipy
+six  torch==2.1.0  torchvision==0.16.0  torchaudio==2.1.0
+tqdm 
  
 
 
