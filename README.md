@@ -54,7 +54,6 @@ rate set to 10-4. The learning rate is halved  after every 200 update steps acro
         It should be noted that due to the unavailability of a powerful processing system, the results are reported using a batch size of 1 (instead of 16). For a fair comparison, the RCAN method was
   	also implemented with a batch size of 1, and the results of the two methods with the same batch size are compared.
 
-   ![image](https://github.com/AminTolou/RPCAN/assets/44254357/4c64b44f-77ae-41ae-8a03-098f0747b4d3)
 
 ########################################################
 How to train the model
