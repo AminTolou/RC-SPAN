@@ -11,8 +11,6 @@ We select the Residual Channel Attention Network (RCAN) as the baseline model fo
 
 ![image](https://github.com/user-attachments/assets/ccfead5f-cb6d-48a6-9090-2c8d5fd9fa51)
 
-
- 
 Figure 1: Structure of RCAN Model
 
 we aim to calculate the total number of parameters in the RCAN architecture. Referring to Fig.1, the first layer is the shallow feature extraction module. Since this module operates on 3 input channels with C=64 filters and employs 3x3 convolutional kernels, the number of parameters in this layer can be determined as follows:
@@ -23,8 +21,9 @@ In the RCAN, there are 200 Residual Channel Attention Blocks (RCAB)  sequentiall
 Subsequently, there is an upscale module where setting the scaling size to 4 results in 64*256*9 = 147,456 parameters. Lastly, there is one convolution layer with 64*3*9 = 1,728 parameters. Summing up the number of parameters for each layer without considering the bias, the total number of network parameters in the RCAN  is 15,303,040. 
 For comparison the Number of parameter between the proposed method and the original RCAN model, Table 1 is provided, The number of parameters of each layer is given separately in this table. Careful examination of Table 1 reveals that by reducing the parameter count of the convolutional layers a and b through the proposed technique, the overall number of trainable parameters in the network has decreased by approximately 47.5%, going from around 15.3m parameters down to about 8m parameters. Fig 5 illustrates the components of the Channel Splitting Attention Module. We've incorporated this module into the RCAN architecture to develop a novel approach called the Residual Channel-Splitting Attention Network (RC-SPAN).
 
- 
-Figure 5: Channel Splitting Attention Madule (Proposed method)
+![image](https://github.com/user-attachments/assets/4d4af449-9f1f-4f22-a5db-2289d2943db1)
+
+![image](https://github.com/user-attachments/assets/2420eb87-8302-4dfb-9a4a-de1196fc16f6)
 
 4.1 Datasets and Evaluation Metrics
 In the field of Single Image Super-Resolution, there are six benchmark datasets: DIV2K[20], Set5 [21], Set14[22], BSD100 [23], Urban100 [24] and Manga109 [25]. Recent studies primarily utilized the DIV2K dataset for model training because of its vast scale and diverse images. The performance of the models was assessed using SET5, SET14, BSD100, Urban100, and Manga109 datasets. To ensure a fair comparison, we followed the same approach. Our model was trained on the DIV2K dataset for image super-resolution, while the other benchmark datasets were used exclusively for evaluating performance.
@@ -41,6 +40,7 @@ The proposed methodology was executed on a high-capacity computing system. This 
 The model architecture comprised 10 residual groups, each containing 20 residual blocks. Every convolutional layer utilized 64 channels, with a batch normalization size of 16 and a reduction ratio of 16. For optimization, the Adam algorithm was employed with an initial learning rate of 10-4. This rate was decreased by half every 200 update steps over a total of 1000 training epochs.
 
 
+![image](https://github.com/user-attachments/assets/1de63cf1-c676-4492-96f4-0d9cbe646f08)
 
 
  
