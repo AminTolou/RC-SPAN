@@ -52,11 +52,11 @@ How to train the model
 ########################################################
 
 1- Prepare training data
-Download DIV2K training data
+Download DIV2K training data  https://data.vision.ee.ethz.ch/cvl/DIV2K/
 
 2- Specify '--dir_data' based on the HR and LR images path. In option.py, '--ext' is set as 'sep_reset', which first convert .png to .npy. If all the training images (.png) are converted to .npy files, then set '--ext sep' to skip converting files.
 
-3-  download bench mark data base that were used for Test 
+3-  download bench mark data base that were used for Test  https://drive.google.com/file/d/1WTcGH3IPsqbPmPQh79GoQCT3x3rSG46O/view?usp=drive_link
 
 4- Unpack the tar file to any place you want. Then, change the dir_data argument in src/option.py to the place where DIV2K images are located.
 
