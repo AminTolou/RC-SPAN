@@ -6,8 +6,12 @@ Deep learning has made significant strides in improving Single Image Super-Resol
 The proposed method was evaluated on five benchmark datasets across three different scaling factors. The results were assessed using performance metrics and visual evaluations. The proposed method reduces the number of parameters and number of FLOPs by 47.5% without significantly reducing the visual and qualitative results. In fact, it creates an acceptable trade-off between the number of parameters and the accuracy of the results.
 We select the Residual Channel Attention Network (RCAN) as the baseline model for the single image super-resolution task [7]. The architecture of this model, depicted in (Fig.1), comprises six key components: a shallow feature extraction module, multiple residual groups, residual blocks, a channel attention mechanism, an up-scaling module, and a reconstruction part.
  The shallow feature extractor acts as the first layer, extracting basic features from the input image. These features are then passed through a series of residual groups, each containing multiple residual blocks. The residual blocks use skip connections to improve gradient flow during the training process. 
+![image](https://github.com/user-attachments/assets/ccfead5f-cb6d-48a6-9090-2c8d5fd9fa51)
+
+
  
 Figure 1: Structure of RCAN Model
+
 we aim to calculate the total number of parameters in the RCAN architecture. Referring to Fig.1, the first layer is the shallow feature extraction module. Since this module operates on 3 input channels with C=64 filters and employs 3x3 convolutional kernels, the number of parameters in this layer can be determined as follows:
 Number of parameters in shallow feature extraction = 3 (input channels) x 64 (filters) x 9 (kernel size 3x3) = 1,728 parameters.
 Next, the number of parameters in each Residual Channel Attention Block (RCAB) is determined as follows. Before the channel attention module within an RCAB, there are two convolutional layers( ConvA & ConvB), each having 64 input channels, 64 output channels, and 3x3 kernel sizes. The number of parameters for these two layers is: 2 x (64 input channels x 64 output channels x 9 for 3x3 kernel) = 73,728 parameters 
@@ -31,7 +35,6 @@ This multi-faceted approach integrates objective mathematical metrics, subjectiv
 4.2 Implementation Details
 The proposed methodology was executed on a high-capacity computing system. This workstation featured 64 GB of RAM and an Intel Core i7 processor, operating on a 64-bit Windows 10 platform. Graphics processing was handled by an NVIDIA GeForce RTX 3060 with 12 GB of dedicated memory. The software stack included PyTorch for deep learning operations and Visual Studio Code for development tasks.
 The model architecture comprised 10 residual groups, each containing 20 residual blocks. Every convolutional layer utilized 64 channels, with a batch normalization size of 16 and a reduction ratio of 16. For optimization, the Adam algorithm was employed with an initial learning rate of 10-4. This rate was decreased by half every 200 update steps over a total of 1000 training epochs.
-
 
 
 ![image](https://github.com/user-attachments/assets/b0c2dd56-7c55-4e1f-802a-a93bf71f9846)
