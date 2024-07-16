@@ -32,101 +32,12 @@ This multi-faceted approach integrates objective mathematical metrics, subjectiv
 The proposed methodology was executed on a high-capacity computing system. This workstation featured 64 GB of RAM and an Intel Core i7 processor, operating on a 64-bit Windows 10 platform. Graphics processing was handled by an NVIDIA GeForce RTX 3060 with 12 GB of dedicated memory. The software stack included PyTorch for deep learning operations and Visual Studio Code for development tasks.
 The model architecture comprised 10 residual groups, each containing 20 residual blocks. Every convolutional layer utilized 64 channels, with a batch normalization size of 16 and a reduction ratio of 16. For optimization, the Adam algorithm was employed with an initial learning rate of 10-4. This rate was decreased by half every 200 update steps over a total of 1000 training epochs.
 
-Databases  	Set 5 [21]
-Set14 [22]
-BSD100 [23]
-Urban100 [24]
-Manga109 [25]
-
-Methods	Scale	PSNR	SSIM	PSNR	SSIM	PSNR	SSIM	PSNR	SSIM	PSNR	SSIM
-Bicubic[2]
-×2	33.66	0.9299	30.24	0.8688	29.56	0.8431	26.88	0.8403	30.80	0.9339
-SRCNN[5]
-	36.66	0.9542	32.45	0.9067	31.36	0.8879	29.50	0.8946	35.60	0.9663
-VDSR [6]
-	37.53	0.9590	33.05	0.9130	31.90	0.8960	30.77	0.9140	37.22	0.9750
-SeaNet[12]
-	38.08	0.9609	33.75	0.9190	32.27	0.9008	32.50	0.9318	38.76	0.9774
-RNAN[10]
-	38.17	0.9611	33.87	0.9207	32.32	0.9014	32.73	0.9340	39.23	0.9785
-EDSR[8]
-	38.11	0.9602	33.92	0.9195	32.32	0.9013	32.93	0.9351	39.10	0.9773
-RDN[9]
-	38.24	0.9614	34.01	0.9212	32.34	0.9017	32.89	0.9353	39.18	0.9780
-RCAN[11]
-	38.27	0.9614	34.12	0.9216	32.41	0.9027	33.34	0.9384	39.44	0.9786
-RC-SPAN		38.25	0.9614	34.04	0.921	32.36	0.902	33.06	0.9366	39.26	0.9782
-RC-SPAN+		38.31	0.9617	34.11	0.9217	32.403	0.9024	33.273	0.9383	39.45	0.9786
-Bicubic[2]
-×3	30.39	0.8682	27.55	0.7742	27.21	0.7385	24.46	0.7349	26.95	0.8556
-SRCNN[5]
-	32.75	0.9090	29.30	0.8215	28.41	0.7863	26.24	0.7989	30.48	0.9117
-VDSR [6]
-	33.67	0.9210	29.78	0.8320	28.83	0.7990	27.14	0.8290	32.01	0.9340
-SeaNet[12]
-	34.55	0.9282	30.42	0.8445	29.17	0.8071	28.50	0.8594	33.73	0.9463
-RNAN[10]
-	---	---	---	---	---	---	---	---	---	---
-EDSR[8]
-	34.65	0.9280	30.52	0.8462	29.25	0.8093	28.80	0.8653	34.17	0.9476
-RDN[9]
-	34.71	0.9296	30.57	0.8468	29.26	0.8093	28.80	0.8653	34.13	0.9484
-RCAN[11]
-	34.74	0.9299	30.65	0.8482	29.32	0.8111	29.09	0.8702	34.44	0.9499
- RC-SPAN		34.71	0.9298	30.55	0.8465	29.23	0.8089	28.74	0.8644	34.02	0.9478
-RC-SPAN+		34.78	0.9302	30.638	0.8478	29.31	0.8103	29.04	0.8687	34.403	0.9497
-Bicubic[2]
-×4	28.42	0.8104	26.00	0.7027	25.96	0.6675	23.14	0.6577	24.89	0.7866
-SRCNN[5]
-	30.48	0.8628	27.50	0.7513	26.90	0.7101	24.52	0.7221	27.58	0.8555
-VDSR [6]
-	31.35	0.8830	28.02	0.7680	27.29	0.0726	25.18	0.7540	28.83	0.8870
-SeaNet[12]
-	32.33	0.8970	28.72	0.7855	27.65	0.7388	26.32	0.7942	30.74	0.9129
-RNAN[10]
-	32.49	0.8982	28.83	0.7878	27.72	0.7421	26.61	0.8023	31.09	0.9149
-EDSR[8]
-	32.46	0.8968	28.80	0.7876	27.71	0.7420	26.64	0.8033	31.02	0.9148
-RDN[9]
-	32.47	0.8990	28.81	32.47	27.72	0.7419	26.61	0.8028	31.00	0.9151
-RCAN[11]
-	32.63	0.9002	28.87	0.7889	27.77	0.7436	26.82	0.8087	31.22	0.9173
- RC-SPAN		32.47	0.8985	28.8	0.7872	27.72	0.7417	26.70	0.8046	31.02	0.9158
-RC-SPAN+		32.59	0.9001	28.9	0.7891	27.79	0.7433	26.91	0.8090	31.40	0.9190
 
 
 ![image](https://github.com/user-attachments/assets/b0c2dd56-7c55-4e1f-802a-a93bf71f9846)
 
 
- 	 	 	 	 	 	 	 
-Urban 100-img092-X4	HR	Bicubic
-16.58/0.4377
-/(0.3570)	EDSR
-19.04/0.6609
-/(0.4892)	SeaNET
-19.11/0.6725
-/(0.4956)	RCAN
-19.640.6964
-/(0.5119)	RC-SPAN
-19.57/0.6930
-/(0.5096)	RC-SPAN+
-19.72/0.6959
-/(0.5123)
- 	 	 	 	 	 	 	 
-Urban 100-img076-X4	HR	Bicubic
-21.57/0.6288
-/(0.4942)	EDSR
-23.07/0.7367
-/(0.5606)	SeaNET
-23.13/0.7439
-/(0.5647)	RCAN
-24.30/0.7896
-/(0.5973)	RC-SPAN
-24.07/0.7889
-/(0.5901)	RC-SPAN+
-24.38/0.7912
-/(0.5988)
-
+ 
 
 
 
