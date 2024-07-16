@@ -43,7 +43,9 @@ The model architecture comprised 10 residual groups, each containing 20 residual
 ![image](https://github.com/user-attachments/assets/1de63cf1-c676-4492-96f4-0d9cbe646f08)
 
 
+![image](https://github.com/user-attachments/assets/12fe2b85-5039-4f81-81fe-94a0c45f6f84)
 
+![image](https://github.com/user-attachments/assets/a2624222-8942-491f-a746-a9054421068c)
 
 ########################################################
 How to train the model
