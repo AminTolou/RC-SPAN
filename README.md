@@ -1,4 +1,4 @@
-# RC-SPAN
+# RC-SPAN: A Low Complexity RCAN By Channel Splitting Module for Single-Image Super Resolution
 
 Low Complexity RCAN  By Channel Splitting Madule for Single-Image Super Resolution (RC-SPAN) The code is based on the EDSR (Enhanced Deep Super-Resolution) and RCAN (Residual Channel Attention Network) methods. https://github.com/sanghyun-son/EDSR-PyTorch https://github.com/yulunzhang/RCAN This implementation takes the foundations of those previous models and builds upon them.
 this code is an implementation of the paper titled "Low Complexity RCAN  By Channel Splitting Madule for  Single-Image Super Resolution (RC-SPAN) " which was recently submitted.
